@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">MafiaDoHenri</string>
+
+    <string-array name="prioridade">
+        <item>Média</item>
+        <item>Baixa</item>
+        <item>Alta</item>
+        <item>Muito alta</item>
+    </string-array>
+
+    <string-array name="tabelas">
+        <item>Pessoas que devem</item>
+        <item>Funcionários</item>
+        <item>Inimigos</item>
+        <item>Mercadorias</item>
+        <item>Território</item>
+        <item>Contrato</item>
+    </string-array>
+
+</resources>
