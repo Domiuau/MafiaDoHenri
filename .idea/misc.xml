@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/DomiU/AndroidStudioProjects/MafiaDoHenri/app/src/main/res/drawable/botao.xml" value="0.2315" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MafiaDoHenri/app/src/main/res/drawable/botaobuscar.xml" value="0.269" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MafiaDoHenri/app/src/main/res/drawable/botaocadastrar.xml" value="0.269" />
+        <entry key="..\:/Users/DomiU/AndroidStudioProjects/MafiaDoHenri/app/src/main/res/drawable/botoes.xml" value="0.1825" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MafiaDoHenri/app/src/main/res/drawable/fundo.xml" value="0.2465" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MafiaDoHenri/app/src/main/res/drawable/fundo2.xml" value="0.106" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MafiaDoHenri/app/src/main/res/drawable/fundoinicial.xml" value="0.269" />

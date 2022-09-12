@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class Mercadorias extends AppCompatActivity implements View.OnClickListener {
 
@@ -67,8 +68,11 @@ public class Mercadorias extends AppCompatActivity implements View.OnClickListen
                         "'" + legal.isChecked() + "') ");
 
                 limpa();
+                Toast.makeText(Mercadorias.this, "Registrado com sucesso!", Toast.LENGTH_SHORT).show();
 
-            } catch (Exception e){}
+            } catch (Exception e){
+                Toast.makeText(Mercadorias.this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
+            }
 
 
 

@@ -49,8 +49,14 @@ public class Buscar extends AppCompatActivity implements View.OnClickListener {
             public void onClick(View v) {
 
                 banco.execSQL("DELETE FROM TB_contratos");
-
+                banco.execSQL("DELETE FROM TB_funcionarios");
+                banco.execSQL("DELETE FROM TB_mercadorias");
+                banco.execSQL("DELETE FROM TB_inimigos");
+                banco.execSQL("DELETE FROM TB_pessoasquedevem");
+                banco.execSQL("DELETE FROM TB_territorios");
                 palavra.setText("");
+                mostrar.setText("");
+                mudafundo.setBackgroundResource(R.drawable.fundo);
 
 
             }
@@ -59,6 +65,36 @@ public class Buscar extends AppCompatActivity implements View.OnClickListener {
         selecionada.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                palavra.setText("");
+                mostrar.setText("");
+                mudafundo.setBackgroundResource(R.drawable.fundo);
+
+                switch (tabelas.getSelectedItemPosition()){
+                    case 0:
+                        banco.execSQL("DELETE FROM TB_pessoasquedevem");
+                        break;
+
+                    case 1:
+                        banco.execSQL("DELETE FROM TB_funcionarios");
+                        break;
+
+                    case 2:
+                        banco.execSQL("DELETE FROM TB_inimigos");
+                        break;
+
+                    case 3:
+                        banco.execSQL("DELETE FROM TB_mercadorias");
+                        break;
+
+                    case 4:
+                        banco.execSQL("DELETE FROM TB_terrotorios");
+                        break;
+
+                    case 5:
+                        banco.execSQL("DELETE FROM TB_contratos");
+                        break;
+                }
 
             }
         });
@@ -462,6 +498,10 @@ public class Buscar extends AppCompatActivity implements View.OnClickListener {
 
         }
 
+                if (mostrar.getText().toString().isEmpty()){
+
+                    mostrar.setBackgroundResource(R.drawable.fundo);
+                }
 
     }
 

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class PessoasQueDevem extends AppCompatActivity implements View.OnClickListener {
 
@@ -64,8 +65,11 @@ public class PessoasQueDevem extends AppCompatActivity implements View.OnClickLi
                         "'" + devedesde.getText().toString() + "' )");
 
                 limpa();
+                Toast.makeText(PessoasQueDevem.this, "Registrado com sucesso!", Toast.LENGTH_SHORT).show();
 
-            } catch (Exception e){}
+            } catch (Exception e){
+                Toast.makeText(PessoasQueDevem.this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
+            }
 
 
 

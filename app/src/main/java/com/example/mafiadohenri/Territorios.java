@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class Territorios extends AppCompatActivity implements View.OnClickListener {
 
@@ -51,22 +52,30 @@ public class Territorios extends AppCompatActivity implements View.OnClickListen
 
         if (v.getId() == R.id.cadastrar) {
 
-        try {
+            if (!local.getText().toString().isEmpty() &&
+                    !importantepara.getText().toString().isEmpty() &&
+                    !quemdomina.getText().toString().isEmpty()) {
 
-            SQLiteDatabase banco = openOrCreateDatabase("DB_mafia", MODE_PRIVATE, null);
+                try {
 
-            banco.execSQL("CREATE TABLE IF NOT EXISTS TB_territorios(local VARCHAR,importantepara VARCHAR, dominado VARCHAR, quemdomina VARCHAR,emconflito VARCHAR)");
+                    SQLiteDatabase banco = openOrCreateDatabase("DB_mafia", MODE_PRIVATE, null);
 
-            banco.execSQL("INSERT INTO TB_territorios(local,importantepara, dominado, quemdomina,emconflito) VALUES ('" + local.getText().toString() + "' , " +
-                    "'" + importantepara.getText().toString() + "' , " +
-                    "'" + dominado.isChecked() + "' ," +
-                    "'" + quemdomina.getText().toString() + "', " +
-                    "'" + emconflito.isChecked() + "') ");
+                    banco.execSQL("CREATE TABLE IF NOT EXISTS TB_territorios(local VARCHAR,importantepara VARCHAR, dominado VARCHAR, quemdomina VARCHAR,emconflito VARCHAR)");
 
-            limpa();
+                    banco.execSQL("INSERT INTO TB_territorios(local,importantepara, dominado, quemdomina,emconflito) VALUES ('" + local.getText().toString() + "' , " +
+                            "'" + importantepara.getText().toString() + "' , " +
+                            "'" + dominado.isChecked() + "' ," +
+                            "'" + quemdomina.getText().toString() + "', " +
+                            "'" + emconflito.isChecked() + "') ");
 
-        } catch (Exception e){}
+                    limpa();
+                    Toast.makeText(Territorios.this, "Registrado com sucesso!", Toast.LENGTH_SHORT).show();
 
+                } catch (Exception e) {
+                }
+            } else {
+                Toast.makeText(Territorios.this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
+            }
 
 
 

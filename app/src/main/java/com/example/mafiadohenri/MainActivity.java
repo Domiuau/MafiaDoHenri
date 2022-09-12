@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.naosei));
         cadastro = findViewById(R.id.cadastrar);
         buscar = findViewById(R.id.buscar);
         sair = findViewById(R.id.sair);

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class Inimigos extends AppCompatActivity implements View.OnClickListener {
 
@@ -54,23 +55,32 @@ public class Inimigos extends AppCompatActivity implements View.OnClickListener 
 
         if (v.getId() == R.id.cadastrar) {
 
-            try {
+            if (!nomefaccao.getText().toString().isEmpty() &&
+                    !regiao.getText().toString().isEmpty() &&
+                    !nomelider.getText().toString().isEmpty() &&
+                    !motivo.getText().toString().isEmpty()) {
 
-                SQLiteDatabase banco = openOrCreateDatabase("DB_mafia", MODE_PRIVATE, null);
+                try {
 
-                banco.execSQL("CREATE TABLE IF NOT EXISTS TB_inimigos(nome VARCHAR,regiao VARCHAR, nomelider VARCHAR, prioridade VARCHAR,motivo VARCHAR,ameaca VARCHAR, infiltrados VARCHAR)");
+                    SQLiteDatabase banco = openOrCreateDatabase("DB_mafia", MODE_PRIVATE, null);
 
-                banco.execSQL("INSERT INTO TB_inimigos(nome,regiao, nomelider, prioridade,motivo,ameaca, infiltrados) VALUES ('" + nomefaccao.getText().toString() + "' , " +
-                        "'" + regiao.getText().toString() + "' , " +
-                        "'" + nomelider.getText().toString() + "' ," +
-                        "'" + prioridade.getSelectedItem().toString() + "', " +
-                        "'" + motivo.getText().toString() + "', " +
-                        "'" + ameaca.isChecked() + "', " +
-                        "'" + infiltrados.isChecked() + "') ");
+                    banco.execSQL("CREATE TABLE IF NOT EXISTS TB_inimigos(nome VARCHAR,regiao VARCHAR, nomelider VARCHAR, prioridade VARCHAR,motivo VARCHAR,ameaca VARCHAR, infiltrados VARCHAR)");
 
-                limpa();
+                    banco.execSQL("INSERT INTO TB_inimigos(nome,regiao, nomelider, prioridade,motivo,ameaca, infiltrados) VALUES ('" + nomefaccao.getText().toString() + "' , " +
+                            "'" + regiao.getText().toString() + "' , " +
+                            "'" + nomelider.getText().toString() + "' ," +
+                            "'" + prioridade.getSelectedItem().toString() + "', " +
+                            "'" + motivo.getText().toString() + "', " +
+                            "'" + ameaca.isChecked() + "', " +
+                            "'" + infiltrados.isChecked() + "') ");
 
-            } catch (Exception e) {
+                    limpa();
+                    Toast.makeText(Inimigos.this, "Registrado com sucesso!", Toast.LENGTH_SHORT).show();
+
+                } catch (Exception e) {
+                }
+            } else {
+                Toast.makeText(Inimigos.this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
             }
 
 
