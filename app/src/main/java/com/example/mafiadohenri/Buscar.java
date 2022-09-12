@@ -510,6 +510,11 @@ public class Buscar extends AppCompatActivity implements View.OnClickListener {
                     mostrar.setBackgroundResource(R.drawable.fundo);
                     mudafundo.setBackgroundResource(R.drawable.fundo);
                 }
+                if (v.getId() == R.id.buscar && palavra.getText().toString().isEmpty()){
+                    mostrar.setText("");
+                    mostrar.setBackgroundResource(R.drawable.fundo);
+                    mudafundo.setBackgroundResource(R.drawable.fundo);
+                }
 
     }
 
