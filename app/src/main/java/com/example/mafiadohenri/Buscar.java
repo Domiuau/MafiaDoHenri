@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.sql.SQLOutput;
 
@@ -57,6 +58,8 @@ public class Buscar extends AppCompatActivity implements View.OnClickListener {
                 palavra.setText("");
                 mostrar.setText("");
                 mudafundo.setBackgroundResource(R.drawable.fundo);
+                mostrar.setBackgroundResource(R.drawable.fundo);
+                Toast.makeText(Buscar.this, "Banco de dados limpo com sucesso!", Toast.LENGTH_SHORT).show();
 
 
             }
@@ -69,6 +72,7 @@ public class Buscar extends AppCompatActivity implements View.OnClickListener {
                 palavra.setText("");
                 mostrar.setText("");
                 mudafundo.setBackgroundResource(R.drawable.fundo);
+                mostrar.setBackgroundResource(R.drawable.fundo);
 
                 switch (tabelas.getSelectedItemPosition()){
                     case 0:
@@ -88,13 +92,15 @@ public class Buscar extends AppCompatActivity implements View.OnClickListener {
                         break;
 
                     case 4:
-                        banco.execSQL("DELETE FROM TB_terrotorios");
+                        banco.execSQL("DELETE FROM TB_territorios");
                         break;
 
                     case 5:
                         banco.execSQL("DELETE FROM TB_contratos");
                         break;
                 }
+
+                Toast.makeText(Buscar.this, "Tabela limpa com sucesso!", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -107,6 +113,7 @@ public class Buscar extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
 
         mudafundo.setBackgroundResource(R.drawable.fundo2);
+        mostrar.setBackgroundResource(R.drawable.fundo2);
 
         tudo = "";
 
@@ -501,6 +508,7 @@ public class Buscar extends AppCompatActivity implements View.OnClickListener {
                 if (mostrar.getText().toString().isEmpty()){
 
                     mostrar.setBackgroundResource(R.drawable.fundo);
+                    mudafundo.setBackgroundResource(R.drawable.fundo);
                 }
 
     }
