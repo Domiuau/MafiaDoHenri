@@ -129,12 +129,12 @@ public class Buscar extends AppCompatActivity implements View.OnClickListener {
                         consulta = "SELECT nome,genero,endereco,tamanhodadivida,telefone,nascimento,devedesde FROM TB_pessoasquedevem";
                     } else {
                         consulta = "SELECT nome,genero,endereco,tamanhodadivida,telefone,nascimento,devedesde FROM TB_pessoasquedevem" +
-                                " WHERE nome = '" + palavra.getText().toString() + "' " +
-                                "OR genero = '" + palavra.getText().toString() + "' " +
-                                "OR endereco = '" + palavra.getText().toString() + "' " +
-                                "OR tamanhodadivida = '" + palavra.getText().toString() + "' " +
-                                "OR nascimento = '" + palavra.getText().toString() + "' " +
-                                "OR devedesde = '" + palavra.getText().toString() + "'";
+                                " WHERE nome LIKE '" + palavra.getText().toString() + "' " +
+                                "OR genero LIKE '" + palavra.getText().toString() + "' " +
+                                "OR endereco LIKE '" + palavra.getText().toString() + "' " +
+                                "OR tamanhodadivida LIKE '" + palavra.getText().toString() + "' " +
+                                "OR nascimento LIKE '" + palavra.getText().toString() + "' " +
+                                "OR devedesde LIKE '" + palavra.getText().toString() + "'";
                     }
 
                     Cursor cursor = banco.rawQuery(consulta, null);
@@ -192,15 +192,15 @@ public class Buscar extends AppCompatActivity implements View.OnClickListener {
                         consulta = "SELECT nome, funcao, genero, datadenascimento, datadeentrada, salario, kill, codenome, importante FROM TB_funcionarios";
                     } else {
                         consulta = "SELECT nome, funcao, genero, datadenascimento, datadeentrada, salario, kill, codenome, importante FROM TB_funcionarios" +
-                                " WHERE nome = '" + palavra.getText().toString() + "' " +
-                                "OR funcao = '" + palavra.getText().toString() + "' " +
-                                "OR genero = '" + palavra.getText().toString() + "' " +
-                                "OR datadenascimento = '" + palavra.getText().toString() + "' " +
-                                "OR datadeentrada = '" + palavra.getText().toString() + "' " +
-                                "OR salario = '" + palavra.getText().toString() + "' " +
-                                "OR kill = '" + palavra.getText().toString() + "' " +
-                                "OR codenome = '" + palavra.getText().toString() + "' " +
-                                "OR importante = '" + palavra.getText().toString() + "' ";
+                                " WHERE nome LIKE '" + palavra.getText().toString() + "' " +
+                                "OR funcao LIKE '" + palavra.getText().toString() + "' " +
+                                "OR genero LIKE '" + palavra.getText().toString() + "' " +
+                                "OR datadenascimento LIKE '" + palavra.getText().toString() + "' " +
+                                "OR datadeentrada LIKE '" + palavra.getText().toString() + "' " +
+                                "OR salario LIKE '" + palavra.getText().toString() + "' " +
+                                "OR kill LIKE '" + palavra.getText().toString() + "' " +
+                                "OR codenome LIKE '" + palavra.getText().toString() + "' " +
+                                "OR importante LIKE '" + palavra.getText().toString() + "' ";
                     }
 
                     Cursor cursor = banco.rawQuery(consulta, null);
@@ -264,13 +264,13 @@ public class Buscar extends AppCompatActivity implements View.OnClickListener {
                         consulta = "SELECT nome,regiao, nomelider, prioridade,motivo,ameaca, infiltrados FROM TB_inimigos";
                     } else {
                         consulta = "SELECT nome,regiao, nomelider, prioridade,motivo,ameaca, infiltrados FROM TB_inimigos" +
-                                " WHERE nome = '" + palavra.getText().toString() + "' " +
-                                "OR regiao = '" + palavra.getText().toString() + "' " +
-                                "OR nomelider = '" + palavra.getText().toString() + "' " +
-                                "OR prioridade = '" + palavra.getText().toString() + "' " +
-                                "OR motivo = '" + palavra.getText().toString() + "' " +
-                                "OR ameaca = '" + palavra.getText().toString() + "' " +
-                                "OR infiltrados = '" + palavra.getText().toString() + "' ";
+                                " WHERE nome LIKE '" + palavra.getText().toString() + "' " +
+                                "OR regiao LIKE '" + palavra.getText().toString() + "' " +
+                                "OR nomelider LIKE '" + palavra.getText().toString() + "' " +
+                                "OR prioridade LIKE '" + palavra.getText().toString() + "' " +
+                                "OR motivo LIKE '" + palavra.getText().toString() + "' " +
+                                "OR ameaca LIKE '" + palavra.getText().toString() + "' " +
+                                "OR infiltrados LIKE '" + palavra.getText().toString() + "' ";
                     }
 
                     Cursor cursor = banco.rawQuery(consulta, null);
@@ -327,14 +327,14 @@ public class Buscar extends AppCompatActivity implements View.OnClickListener {
                         consulta = "SELECT tipomercadoria,nomemercadoria, preco, localvenda,lucro,emestoque, quemvende, legal FROM TB_mercadorias";
                     } else {
                         consulta = "SELECT tipomercadoria,nomemercadoria, preco, localvenda,lucro,emestoque, quemvende, legal FROM TB_mercadorias" +
-                                " WHERE tipomercadoria = '" + palavra.getText().toString() + "' " +
-                                "OR nomemercadoria = '" + palavra.getText().toString() + "' " +
-                                "OR preco = '" + palavra.getText().toString() + "' " +
-                                "OR localvenda = '" + palavra.getText().toString() + "' " +
-                                "OR lucro = '" + palavra.getText().toString() + "' " +
-                                "OR emestoque = '" + palavra.getText().toString() + "' " +
-                                "OR quemvende = '" + palavra.getText().toString() + "' " +
-                                "OR legal = '" + palavra.getText().toString() + "'";
+                                " WHERE tipomercadoria LIKE '" + palavra.getText().toString() + "' " +
+                                "OR nomemercadoria LIKE '" + palavra.getText().toString() + "' " +
+                                "OR preco LIKE '" + palavra.getText().toString() + "' " +
+                                "OR localvenda LIKE '" + palavra.getText().toString() + "' " +
+                                "OR lucro LIKE '" + palavra.getText().toString() + "' " +
+                                "OR emestoque LIKE '" + palavra.getText().toString() + "' " +
+                                "OR quemvende LIKE '" + palavra.getText().toString() + "' " +
+                                "OR legal LIKE '" + palavra.getText().toString() + "'";
                     }
 
                     Cursor cursor = banco.rawQuery(consulta, null);
@@ -393,11 +393,11 @@ public class Buscar extends AppCompatActivity implements View.OnClickListener {
                         consulta = "SELECT local,importantepara, dominado, quemdomina,emconflito FROM TB_territorios";
                     } else {
                         consulta = "SELECT local,importantepara, dominado, quemdomina,emconflito FROM TB_territorios" +
-                                " WHERE local = '" + palavra.getText().toString() + "' " +
-                                "OR importantepara = '" + palavra.getText().toString() + "' " +
-                                "OR dominado = '" + palavra.getText().toString() + "' " +
-                                "OR quemdomina = '" + palavra.getText().toString() + "' " +
-                                "OR emconflito = '" + palavra.getText().toString() + "'";
+                                " WHERE local LIKE '" + palavra.getText().toString() + "' " +
+                                "OR importantepara LIKE '" + palavra.getText().toString() + "' " +
+                                "OR dominado LIKE '" + palavra.getText().toString() + "' " +
+                                "OR quemdomina LIKE '" + palavra.getText().toString() + "' " +
+                                "OR emconflito LIKE '" + palavra.getText().toString() + "'";
                     }
 
                     Cursor cursor = banco.rawQuery(consulta, null);
@@ -449,12 +449,13 @@ public class Buscar extends AppCompatActivity implements View.OnClickListener {
                         consulta = "SELECT tipo,pessoaquecontratou,inicio,fim,preco,detalhes,arriscado FROM TB_contratos";
                     } else {
                         consulta = "SELECT tipo,pessoaquecontratou,inicio,fim,preco,detalhes,arriscado FROM TB_contratos" +
-                                " WHERE tipo = '" + palavra.getText().toString() + "' " +
-                                "OR pessoaquecontratou = '" + palavra.getText().toString() + "' " +
-                                "OR inicio = '" + palavra.getText().toString() + "' " +
-                                "OR fim = '" + palavra.getText().toString() + "' " +
-                                "OR preco = '" + palavra.getText().toString() + "' " +
-                                "OR arriscado = '" + palavra.getText().toString() + "'";
+                                " WHERE tipo LIKE '" + palavra.getText().toString() + "' " +
+                                "OR pessoaquecontratou LIKE '" + palavra.getText().toString() + "' " +
+                                "OR inicio LIKE '" + palavra.getText().toString() + "' " +
+                                "OR fim LIKE '" + palavra.getText().toString() + "' " +
+                                "OR preco LIKE '" + palavra.getText().toString() + "' " +
+                                "OR detalhes LIKE '" + palavra.getText().toString() + "' " +
+                                "OR arriscado LIKE '" + palavra.getText().toString() + "'";
                     }
 
                     Cursor cursor = banco.rawQuery(consulta, null);
